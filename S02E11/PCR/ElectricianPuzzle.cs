@@ -6,8 +6,7 @@ namespace CodingDojo.S02E11.PCR
 {
     public class ElectricianPuzzle
     {
-        private IList<Cable> _cables;
-        private IDictionary<Cable, int> _croisementsParCable;
+        private Centrale _centrale;
 
         public void ParseInputFromConsole()
         {
@@ -30,33 +29,34 @@ namespace CodingDojo.S02E11.PCR
 
         public void ParseInput(IEnumerable<Tuple<int, int>> data)
         {
-            _cables = data.Select(t => new Cable(t.Item1, t.Item2)).ToList();
+            _centrale = new Centrale(data.ToList());
         }
 
         public int ComputeSolution()
         {
-            _croisementsParCable = this.CroisementParCable(this._cables);
+            // Pour retrouver l'état initial, rebrancher tous les câbles :
+            foreach (var cable in this._centrale.Cables.ToList())
+                cable.Brancher();
 
-            while (_croisementsParCable.Values.Sum() > 0)
+            // Pour optimiser le traitement,
+            // commencer par débrancher les câbles
+            // qui ont le plus de croisements :
+            var nombreMaxDeCroisements = this._centrale.CroisementsParCable.Values.Max(croisements => croisements.Count);
+
+            // Débrancher ensuite les câbles en suivant
+            // l'ordre décroissant du nombre max de croisements
+            // jusqu'à 0 croisement :
+            while (nombreMaxDeCroisements > 0)
             {
-                var nombreMaxDeCroisements = this._croisementsParCable.Values.Max();
-                var cableQuiSeCroiseUnMax = this._croisementsParCable.First(kv => kv.Value == nombreMaxDeCroisements);
-                this._cables.Remove(cableQuiSeCroiseUnMax.Key);
+                var cableQuiSeCroiseUnMax = this._centrale.CroisementsParCable.First(kv => kv.Value.Count == nombreMaxDeCroisements).Key;
+                cableQuiSeCroiseUnMax.Debrancher();
 
-                _croisementsParCable = this.CroisementParCable(this._cables);
+                nombreMaxDeCroisements = this._centrale.CroisementsParCable.Values.Max(croisements => croisements.Count);
             }
 
-            return this._cables.Count;
-        }
-
-        private IDictionary<Cable, int> CroisementParCable(IList<Cable> cables)
-        {
-            var croisementsParCable = new Dictionary<Cable, int>(this._cables.Count);
-            foreach (var cable in this._cables)
-            {
-                croisementsParCable.Add(cable, cable.SeCroiseAvec(cables));
-            }
-            return croisementsParCable;
+            // Lorsqu'il n'y a plus de croisements, 
+            // le résultat est le nombre de câble encore branchés :
+            return this._centrale.Cables.Count(c => c.EstBranche);
         }
     }
 }

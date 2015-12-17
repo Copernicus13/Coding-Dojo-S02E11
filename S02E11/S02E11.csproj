@@ -39,6 +39,7 @@
     <Compile Include="EDM\ElectricianPuzzle.cs" />
     <Compile Include="KGA\ElectricianPuzzle.cs" />
     <Compile Include="PCR\Cable.cs" />
+    <Compile Include="PCR\Centrale.cs" />
     <Compile Include="PCR\ElectricianPuzzle.cs" />
     <Compile Include="ElectricianPuzzle.cs" />
     <Compile Include="MBN\ElectricianPuzzle.cs" />

@@ -1180,5 +1180,33 @@ namespace CodingDojo.UnitTests
             // Assert (Then)
             Assert.AreEqual(55, result, "Try again dude !");
         }
+
+        [TestMethod]
+        public void TestWithoutCrossing()
+        {
+            // Arrange (Given)
+            var solver = new ElectricianPuzzle();
+
+            var data = new List<Tuple<int, int>>()
+                {
+                    new Tuple<int, int>(1, 1),
+                    new Tuple<int, int>(2, 2),
+                    new Tuple<int, int>(3, 3),
+                    new Tuple<int, int>(4, 4),
+                    new Tuple<int, int>(5, 5),
+                    new Tuple<int, int>(6, 6),
+                    new Tuple<int, int>(7, 7),
+                    new Tuple<int, int>(8, 8),
+                    new Tuple<int, int>(9, 9)
+                };
+
+            // Act (When)
+            solver.ParseInput(data);
+            var result = solver.ComputeSolution();
+
+            // Assert (Then)
+            Assert.AreEqual(9, result, "Ohh noo !");
+        }
+
     }
 }
