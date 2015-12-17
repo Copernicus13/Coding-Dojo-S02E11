@@ -9,6 +9,50 @@ namespace CodingDojo.UnitTests
     public class UnitTests
     {
         [TestMethod]
+        public void TestVeryLight()
+        {
+            // Arrange (Given)
+            var solver = new ElectricianPuzzle();
+
+            var data = new List<Tuple<int, int>>()
+                {
+                    new Tuple<int, int>(1, 3),
+                    new Tuple<int, int>(2, 4),
+                    new Tuple<int, int>(4, 4),
+                    new Tuple<int, int>(3, 1)
+                };
+
+            // Act (When)
+            solver.ParseInput(data);
+            var result = solver.ComputeSolution();
+
+            // Assert (Then)
+            Assert.AreEqual(3, result, "Bad answer !");
+        }
+
+        [TestMethod]
+        public void TestVeryLightBis()
+        {
+            // Arrange (Given)
+            var solver = new ElectricianPuzzle();
+
+            var data = new List<Tuple<int, int>>()
+                {
+                    new Tuple<int, int>(1, 3),
+                    new Tuple<int, int>(2, 4),
+                    new Tuple<int, int>(4, 4),
+                    new Tuple<int, int>(2, 2)
+                };
+
+            // Act (When)
+            solver.ParseInput(data);
+            var result = solver.ComputeSolution();
+
+            // Assert (Then)
+            Assert.AreEqual(3, result, "Bad answer !");
+        }
+
+        [TestMethod]
         public void TestLight()
         {
             // Arrange (Given)
