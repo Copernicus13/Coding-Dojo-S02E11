@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace CodingDojo.S02E11.EDM
 {
-    public class ElectricianPuzzle_EDM
+    public class ElectricianPuzzle
     {
 
         /// <summary>

@@ -36,12 +36,12 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ElectricianPuzzle_EDM.cs" />
-    <Compile Include="ElectricianPuzzle.KGA.cs" />
-    <Compile Include="Cable.PCR.cs" />
-    <Compile Include="ElectricianPuzzle.PCR.cs" />
+    <Compile Include="EDM\ElectricianPuzzle.cs" />
+    <Compile Include="KGA\ElectricianPuzzle.cs" />
+    <Compile Include="PCR\Cable.cs" />
+    <Compile Include="PCR\ElectricianPuzzle.cs" />
     <Compile Include="ElectricianPuzzle.cs" />
-    <Compile Include="ElectricianPuzzle_MBN.cs" />
+    <Compile Include="MBN\ElectricianPuzzle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
