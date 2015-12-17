@@ -9,10 +9,37 @@ namespace CodingDojo.UnitTests
     public class UnitTests
     {
         [TestMethod]
+        public void TestMini()
+        {
+            // Arrange (Given)
+            var solver = new ElectricianPuzzle();
+
+            var data = new List<Tuple<int, int>>()
+                {
+                    new Tuple<int, int>(1, 6),
+                    new Tuple<int, int>(3, 1),
+                    new Tuple<int, int>(3, 5),
+                    new Tuple<int, int>(4, 3),
+                    new Tuple<int, int>(5, 8),
+                    new Tuple<int, int>(6, 10),
+                    new Tuple<int, int>(7, 4),
+                    new Tuple<int, int>(8, 7),
+                    new Tuple<int, int>(9, 9)
+                };
+
+            // Act (When)
+            solver.ParseInput(data);
+            var result = solver.ComputeSolution();
+
+            // Assert (Then)
+            Assert.AreEqual(5, result, "Izi Pizi !");
+        }
+
+        [TestMethod]
         public void TestLight()
         {
             // Arrange (Given)
-            var solver = new ElectricianPuzzle_EDM();
+            var solver = new ElectricianPuzzle();
 
             var data = new List<Tuple<int, int>>()
                 {
@@ -80,7 +107,7 @@ namespace CodingDojo.UnitTests
         public void TestHard()
         {
             // Arrange (Given)
-            var solver = new ElectricianPuzzle_EDM();
+            var solver = new ElectricianPuzzle();
 
             var data = new List<Tuple<int, int>>()
                 {
