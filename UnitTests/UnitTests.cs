@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using CodingDojo.S02E11;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CodingDojo.UnitTests
@@ -9,6 +8,54 @@ namespace CodingDojo.UnitTests
     public class UnitTests
     {
         [TestMethod]
+        public void TestMini()
+        {
+            // Arrange (Given)
+            var solver = new ElectricianPuzzle();
+
+            var data = new List<Tuple<int, int>>()
+                {
+                    new Tuple<int, int>(1, 6),
+                    new Tuple<int, int>(3, 1),
+                    new Tuple<int, int>(3, 5),
+                    new Tuple<int, int>(4, 3),
+                    new Tuple<int, int>(5, 8),
+                    new Tuple<int, int>(6, 10),
+                    new Tuple<int, int>(7, 4),
+                    new Tuple<int, int>(8, 7),
+                    new Tuple<int, int>(9, 9)
+                };
+
+            // Act (When)
+            solver.ParseInput(data);
+            var result = solver.ComputeSolution();
+
+            // Assert (Then)
+            Assert.AreEqual(5, result, "Izi Pizi !");
+        }
+
+		[TestMethod]
+		public void TestExemple()
+        {
+            // Arrange (Given)
+            var solver = new ElectricianPuzzle();
+
+            var data = new List<Tuple<int, int>>()
+                {
+                    new Tuple<int, int>(1, 3),
+                    new Tuple<int, int>(3, 1),
+                    new Tuple<int, int>(4, 2),
+                    new Tuple<int, int>(4, 4)
+
+                };
+
+            // Act (When)
+            solver.ParseInput(data);
+            var result = solver.ComputeSolution();
+
+            // Assert (Then)
+            Assert.AreEqual(3, result, "Bad answer !");
+        }
         public void TestVeryLight()
         {
             // Arrange (Given)
@@ -1137,5 +1184,27 @@ namespace CodingDojo.UnitTests
             // Assert (Then)
             Assert.AreEqual(55, result, "Try again dude !");
         }
+
+        [TestMethod]
+        public void TestSuperLight()
+        {
+            // Arrange (Given)
+            var solver = new ElectricianPuzzle_EDM();
+
+            var data = new List<Tuple<int, int>>()
+                {
+                    new Tuple<int, int>(1, 3),
+                    new Tuple<int, int>(2, 4),
+                    new Tuple<int, int>(3, 1),
+                    new Tuple<int, int>(4, 4),
+                };
+
+            // Act (When)
+            solver.ParseInput(data);
+            var result = solver.ComputeSolution();
+
+            // Assert (Then)
+            Assert.AreEqual(3, result, "Bien ouej !");
+    }
     }
 }

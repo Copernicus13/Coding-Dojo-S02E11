@@ -36,6 +36,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ElectricianPuzzle_EDM.cs" />
+    <Compile Include="ElectricianPuzzle.KGA.cs" />
+    <Compile Include="Cable.PCR.cs" />
+    <Compile Include="ElectricianPuzzle.PCR.cs" />
     <Compile Include="ElectricianPuzzle.cs" />
     <Compile Include="ElectricianPuzzle_MBN.cs" />
     <Compile Include="Program.cs" />
