@@ -38,6 +38,8 @@
   <ItemGroup>
     <Compile Include="ElectricianPuzzle_EDM.cs" />
     <Compile Include="ElectricianPuzzle.KGA.cs" />
+    <Compile Include="Cable.PCR.cs" />
+    <Compile Include="ElectricianPuzzle.PCR.cs" />
     <Compile Include="ElectricianPuzzle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
