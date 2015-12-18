@@ -34,16 +34,8 @@ namespace CodingDojo.UnitTests
                     new Tuple<int, int>(4, 4),
                     new Tuple<int, int>(2, 2)
                 };
-            // TestSuperLight
-            var data3 = new List<Tuple<int, int>>()
-                {
-                    new Tuple<int, int>(1, 3),
-                    new Tuple<int, int>(2, 4),
-                    new Tuple<int, int>(3, 1),
-                    new Tuple<int, int>(4, 4),
-                };
             // TestExemple
-            var data4 = new List<Tuple<int, int>>()
+            var data3 = new List<Tuple<int, int>>()
                 {
                     new Tuple<int, int>(1, 3),
                     new Tuple<int, int>(3, 1),
@@ -58,14 +50,11 @@ namespace CodingDojo.UnitTests
             var result2 = solver.ComputeSolution();
             solver.ParseInput(data3);
             var result3 = solver.ComputeSolution();
-            solver.ParseInput(data4);
-            var result4 = solver.ComputeSolution();
 
             // Assert (Then)
             Assert.AreEqual(3, result1, "Bad answer !");
             Assert.AreEqual(3, result2, "Bad answer !");
             Assert.AreEqual(3, result3, "Bad answer !");
-            Assert.AreEqual(3, result4, "Bad answer !");
         }
 
         [TestMethod]
@@ -1207,6 +1196,5 @@ namespace CodingDojo.UnitTests
             // Assert (Then)
             Assert.AreEqual(9, result, "Ohh noo !");
         }
-
     }
 }

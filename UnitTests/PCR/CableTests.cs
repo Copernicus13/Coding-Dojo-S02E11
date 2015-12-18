@@ -2,7 +2,7 @@
 using CodingDojo.S02E11.PCR;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CodingDojo.UnitTests
+namespace CodingDojo.UnitTests.PCR
 {
     [TestClass]
     public class CableTests
